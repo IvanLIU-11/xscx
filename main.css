@@ -1,0 +1,182 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    width: 100vw;
+    height: 100vh; /* 设置body的高度为视口高度的100% */
+    display: flex; /* 使用flex布局 */
+    flex-direction: column; /* 子元素垂直排列 */
+}
+
+/*顶部bar*/
+#top_bar{
+    background-color: #0252A7;
+    width: 100%;
+    display: flex; /* 使用flex布局 */
+    align-items: center; /* 使子元素在交叉轴上居中 */
+    height: 9vh;
+    position: fixed;
+    padding-left: 1vw;
+    z-index: 1000; /* 确保在其它内容之上 */
+}
+
+/*主体视窗*/
+#main_body{
+    width: 100vw;
+    height: fit-content;
+    min-height: 91vh;
+    margin-top: 9vh; /* 通过margin-top调整位置，使其从#top_bar下方开始 */
+    display: flex;
+    flex-direction: row;
+}
+
+/* 左侧导航栏 */
+#left_navi {
+    /*background-color: #f2f2f2;*/
+    background-color: #ffffff;
+    width: 12vw;
+    height: 100%; /* 设置高度为视口高度的100% */
+    flex-shrink: 0; /* 防止在缩小视口时被压缩 */
+    display: flex;
+    flex-direction: column;
+}
+
+/*导航栏按钮*/
+.navi_button{
+    width: 100%;
+    height: 8%;
+    background-color: #ffffff;
+    user-select: none;
+    display: flex;                /* 使用flex布局 */
+    justify-content: center;      /* 水平居中 */
+    align-items: center;          /* 垂直居中 */
+    color: #778899;                  /* 设置字体颜色 */
+}
+
+.navi_button:hover{
+    background-color: #F5F5F5;
+    cursor: pointer;
+}
+
+.navi_button.selected{
+    background-color: #3986d3;
+    color: #FFFFFF;
+}
+
+/*主视图*/
+#main_view_case{
+    width: 88vw;
+    height: 100%; /* 设置高度为视口高度的100% */
+    flex-shrink: 0; /* 防止在缩小视口时被压缩 */
+    border-left: 2px solid #EEE9E9;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    display: block;
+}
+
+#main_view_exam{
+    width: 88vw;
+    height: 100%; /* 设置高度为视口高度的100% */
+    flex-shrink: 0; /* 防止在缩小视口时被压缩 */
+    border-left: 2px solid #EEE9E9;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: none;
+}
+
+/*图片条*/
+#img_banner{
+    width: 100%;
+    padding-left: 0.1vw;
+    user-select: none; 
+}
+
+/*案例类型选择区*/
+#category_bar{
+    width: 100%;
+    user-select: none; 
+    height: fit-content;
+    display: flex;                /* 使用flex布局 */
+    flex-direction: row;
+    justify-content: center;      /* 水平居中 */
+    align-items: center;          /* 垂直居中 */
+    padding: 0;
+}
+
+/*案例类型选择按钮*/
+.category_button{
+    width: 8%;
+    user-select: none; 
+    height: fit-content;
+    display: flex;                /* 使用flex布局 */
+    justify-content: center;      /* 水平居中 */
+    font-size: 1.2vw;              /* 设置字体大小 */
+    color: #778899;
+    border: 2px solid #778899; /* 设置边框颜色和宽度 */
+    border-radius: 5vh;    /* 设置圆角大小 */
+    margin-left: 1vw;
+}
+
+.category_button:hover{
+    cursor: pointer;
+    background-color: #F5F5F5;
+}
+
+.category_button.selected{
+    background-color: #3986d3;
+    color: #FFFFFF;
+    border: 2px solid #3986d3; /* 设置边框颜色和宽度 */
+}
+
+/*案例列表*/
+#case_list_container{
+    width: 100%;
+    height: fit-content;
+    display: flex; /* 使用flex布局 */
+    flex-direction: column; /* 子项垂直排列 */
+}
+
+/*案例表项*/
+#case_list li{
+    background-color: #ffffff;
+    list-style-type: none;
+    height: fit-content;
+    border: 1px solid #ffffff; /* 设置边框 */
+    border-radius: 8px; /* 设置圆角边框，数值可以根据需要调整 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 设置阴影，数值可以根据需要调整 */
+    margin-right: 2vw;
+    margin-bottom: 1vh;
+    display: flex;
+    flex-direction: row;
+}
+
+#case_list li:hover{
+    cursor: pointer;
+    color: #3986d3;
+}
+
+.item_index{
+    color: #3986d3;
+    font-size: 2vw;
+    font-weight: bolder;
+    font-style: italic;
+    width: 2.7vw;
+    display: flex;                /* 使用flex布局 */
+    justify-content: center;      /* 水平居中 */
+    align-items: center;          /* 垂直居中 */
+    user-select: none; 
+    margin-right: 0.5vw;
+    margin-left: 0.2vw;
+}
+
+.item_info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;      /* 水平居中 */
+}
+

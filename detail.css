@@ -1,0 +1,116 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    width: 100vw;
+    height: 100vh; /* 设置body的高度为视口高度的100% */
+    display: flex; /* 使用flex布局 */
+    flex-direction: column; /* 子元素垂直排列 */
+    overflow-x: hidden;
+}
+
+/*顶部bar*/
+#top_bar{
+    background-color: #0252A7;
+    width: 100%;
+    display: flex; /* 使用flex布局 */
+    align-items: center; /* 使子元素在交叉轴上居中 */
+    height: 9vh;
+    position: fixed;
+    padding-left: 1vw;
+    z-index: 1000; /* 确保在其它内容之上 */
+}
+
+/*主体视窗*/
+#main_body{
+    width: 100vw;
+    height: 91vh; /* 设置高度为视口高度的100% */
+    margin-top: 9vh; /* 通过margin-top调整位置，使其从#top_bar下方开始 */
+    display: flex;
+    flex-direction: column;
+}
+
+/*图片横幅*/
+#img_banner_detail{
+    width: 100%;
+    user-select: none; 
+}
+
+/*主题栏*/
+#theme_bar{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;      /* 水平居中 */
+    align-items: center;          /* 垂直居中 */
+}
+
+#back_bar{
+    width: 90%;
+    padding: 0;
+    height: 2vh;
+}
+
+#back_button{
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    color: #778899;
+    user-select: none; 
+    align-items: center;          /* 垂直居中 */
+}
+
+#back_button:hover{
+    cursor: pointer;
+    color: #0252A7;
+}
+
+#theme{
+    width: 90%;
+    padding: 0;
+    height: 4vw;
+}
+
+#theme_line{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+#text_area{
+    width: 100vw;
+    display: flex;
+    justify-content: center;      /* 水平居中 */
+    align-items: center;          /* 垂直居中 */
+    flex-direction: column;
+}
+
+.case_title{
+    width: 70%;
+    height: fit-content;
+    text-align: center;
+    word-wrap: break-word; /* 允许在长单词或URL内部进行换行 */
+    overflow-wrap: break-word; /* 允许在长单词或URL内部进行换行 */
+}   
+
+#full_text{
+    width: 70%;
+    height: fit-content;
+    text-indent: 4em; /* 缩进两个字符 */
+    text-align: justify;
+    line-height:2.5;
+    word-wrap: break-word; /* 允许在长单词或URL内部进行换行 */
+    overflow-wrap: break-word; /* 允许在长单词或URL内部进行换行 */
+    display: flex;
+    flex-direction: column;
+}
+
+.pic_div{
+    width: 100%;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    display: flex;
+    justify-content: center;      /* 水平居中 */
+}

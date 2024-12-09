@@ -1,0 +1,114 @@
+<!--
+ * @Author: IvanLiu
+ * @LastEditors: IvanLiu
+ * @Date: 2024-11-15 09:45:27
+ * @LastEditTime: 2024-12-09 18:46:29
+ * @Descripttion: 
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title id="label_title">New Page</title>
+        <link rel="stylesheet" type="text/css" href="detail.css">
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <script>
+            //跳回前一页
+            function goBack() {
+                window.history.back(); // 使用history对象的back方法来返回上一个页面
+            }
+        </script>
+    </head>
+    <body>
+        <div id="top_bar">
+            <a href="https://cse.csu.edu.cn/index.htm" ><img src="./img/logo.png" style="width: 22vw; height: auto;"></a>
+        </div>
+        <div id = "main_body">
+            <div id="img_banner_detail">
+                <img src="./img/banner.jpg" style="width: 100%; height: auto;">
+            </div>
+            <div id="theme_bar">
+                <div id="back_bar">
+                    <div id="back_button" onclick="goBack()">
+                        <p style="font-size: 0.9vw; font-weight: bold;">＜</p>
+                        <p style="font-size: 0.9vw;">返回</p>
+                    </div>
+                </div>
+                <div id="theme">
+                    <p style="font-size: 1.5vw; color: #000000;">案例学习</p>
+                </div>
+                <div id="theme_line">
+                    <div style="width: 10%; height: 0.2vh; background-color: #0252A7;"></div>
+                    <div style="width: 90%; height: 0.1vh; background-color: #EEE9E9;"></div>
+                </div>
+            </div>
+            <div id="text_area">
+                <div class = "case_title">
+                    <p style="font-size: 2vw; font-weight: bold;line-height: 2; margin: 0; padding: 0; margin-top: 2vh;" id="case_title_txt"></p>
+                </div>
+                <div class = "case_title">
+                    <p style="font-size: 1.2vw; color: grey; line-height: 2; margin: 0; padding: 0;" id="case_time_txt"></p>
+                </div>
+                <div id = "full_text"></div>
+                <!--占位空白区-->
+                <div style="height: 50vh; width: 100%;"></div>
+            </div>
+            
+        </div>
+    
+        <!--读取页面跳转信息更新页面-->
+        <script>
+            var case_info = JSON.parse(localStorage.getItem("case_info"));
+
+            var title_txt = case_info.title;
+            var time_txt = case_info.time;
+            var full_txt = case_info.full_text;
+            var pic_location_arr = case_info.pic_location;
+            var pic_name_arr = case_info.pic_name;
+
+            document.getElementById('label_title').textContent = title_txt;
+            document.getElementById('case_title_txt').textContent = title_txt;
+            document.getElementById('case_time_txt').textContent = '事件时间：' + time_txt;
+
+            //处理案例信息分段
+            // 使用 '<br>' 作为分隔符来分割字符串
+            const parts = full_txt.split('<br>');
+            // 移除空字符串，如果存在连续的 '<br>' 标签，可能会产生空字符串
+            parts.filter(part => part.trim() !== '');
+
+            //响应式生成正文文本
+            //随配置在不同位置插入不同图片
+            const full_text_div = document.getElementById('full_text'); 
+            var paragraph_index = 0;
+            var pic_index = 0;
+            parts.forEach(function(paragraph) {
+                const p = document.createElement('p');
+                p.style.fontSize = '1.2vw';
+                p.style.margin = 0;
+                p.style.padding = 0;
+                p.textContent = paragraph;
+                full_text_div.appendChild(p);
+
+                if(paragraph_index == pic_location_arr[pic_index]){
+                    //到了要插入图片的位置
+                    const pic_div = document.createElement('div');
+                    pic_div.className = 'pic_div';
+
+                    const pic = document.createElement('img');
+                    pic.src = "./data/case_img/" + pic_name_arr[pic_index];
+                    pic.style.width = "40%";
+                    pic.style.height = "auto";
+
+                    pic_div.appendChild(pic);
+                    full_text_div.appendChild(pic_div);
+
+                    pic_index = pic_index + 1;
+                }
+
+                paragraph_index = paragraph_index + 1;
+            });
+            //用完删掉
+            localStorage.removeItem('case_info');
+        </script>
+    </body>
+</html>
