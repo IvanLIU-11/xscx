@@ -180,3 +180,8 @@ body{
     justify-content: center;      /* 水平居中 */
 }
 
+.case_t_n_loc{
+    display: flex;
+    flex-direction: row;
+}
+

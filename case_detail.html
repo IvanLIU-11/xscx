@@ -2,7 +2,7 @@
  * @Author: IvanLiu
  * @LastEditors: IvanLiu
  * @Date: 2024-11-15 09:45:27
- * @LastEditTime: 2024-12-09 18:46:29
+ * @LastEditTime: 2024-12-15 10:40:58
  * @Descripttion: 
 -->
 <!DOCTYPE html>
@@ -21,7 +21,7 @@
     </head>
     <body>
         <div id="top_bar">
-            <a href="https://cse.csu.edu.cn/index.htm" ><img src="./img/logo.png" style="width: 22vw; height: auto;"></a>
+            <a href="./main.html" ><img src="./img/slogan.png" style="width: 29.7vw; height: auto;"></a>
         </div>
         <div id = "main_body">
             <div id="img_banner_detail">
@@ -47,7 +47,8 @@
                     <p style="font-size: 2vw; font-weight: bold;line-height: 2; margin: 0; padding: 0; margin-top: 2vh;" id="case_title_txt"></p>
                 </div>
                 <div class = "case_title">
-                    <p style="font-size: 1.2vw; color: grey; line-height: 2; margin: 0; padding: 0;" id="case_time_txt"></p>
+                        <p style="font-size: 1.2vw; color: grey; line-height: 2; margin: 0; padding: 0;" id="case_time_txt"></p>
+                        <p style="font-size: 1.2vw; color: grey; line-height: 2; margin: 0; margin-left: 1vw;padding: 0;" id="case_location_txt">1111</p>
                 </div>
                 <div id = "full_text"></div>
                 <!--占位空白区-->
@@ -62,13 +63,15 @@
 
             var title_txt = case_info.title;
             var time_txt = case_info.time;
+            var location_txt = case_info.region;
             var full_txt = case_info.full_text;
             var pic_location_arr = case_info.pic_location;
             var pic_name_arr = case_info.pic_name;
 
             document.getElementById('label_title').textContent = title_txt;
             document.getElementById('case_title_txt').textContent = title_txt;
-            document.getElementById('case_time_txt').textContent = '事件时间：' + time_txt;
+            document.getElementById('case_time_txt').textContent = '事件时间:' + time_txt;
+            document.getElementById('case_location_txt').textContent = '地区:' + location_txt;
 
             //处理案例信息分段
             // 使用 '<br>' 作为分隔符来分割字符串

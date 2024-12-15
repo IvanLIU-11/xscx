@@ -93,6 +93,10 @@ body{
     text-align: center;
     word-wrap: break-word; /* 允许在长单词或URL内部进行换行 */
     overflow-wrap: break-word; /* 允许在长单词或URL内部进行换行 */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;      /* 水平居中 */
+    align-items: center;          /* 垂直居中 */    
 }   
 
 #full_text{
