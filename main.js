@@ -2,7 +2,7 @@
  * @Author: IvanLiu
  * @LastEditors: IvanLiu
  * @Date: 2024-11-15 09:45:43
- * @LastEditTime: 2024-12-16 15:45:49
+ * @LastEditTime: 2024-12-16 16:54:26
  * @Descripttion: 
  */
 
@@ -73,6 +73,27 @@ exam_button.addEventListener('click', function(){
         document.getElementById("main_view_case").style.display = 'none';
         document.getElementById("main_view_exam").style.display = 'block';
     }
+});
+
+//处理从案例详情返回的情况，继续显示案例列表
+document.addEventListener('DOMContentLoaded', function() {
+    // 尝试从 localStorage 或 URL 查询参数中恢复状态
+    var value = localStorage.getItem('from_case_module');
+    
+    if(value !==null){
+        //非空说明是从案例页回来的
+        selected_navi_button.classList.remove('selected');
+        selected_navi_button = case_button;
+        selected_navi_button.classList.add('selected');
+        docs_icon.src = imgMap['docs_grey'];
+        case_icon.src = imgMap['book_white'];
+        exam_icon.src = imgMap['hat_grey'];
+
+        document.getElementById("main_view_exam").style.display = 'none';
+        document.getElementById("main_view_docs").style.display = 'none';
+        document.getElementById("main_view_case").style.display = 'block';
+    }
+    localStorage.removeItem('from_case_module');
 });
 
 
@@ -269,6 +290,9 @@ function case_item_clicked(index) {
     // localStorage.setItem('case_title', case_info_arr[index].title);
     // localStorage.setItem('case_time', case_info_arr[index].time);
     // localStorage.setItem('case_full_text', case_info_arr[index].full_text);
+    
+    //标记自己是来自案例学习板块，返回回到案例学习
+    localStorage.setItem('from_case_module', 'yes');
 
     localStorage.setItem('case_info', JSON.stringify(case_info_arr[index]));
     window.location.href = 'case_detail.html';
