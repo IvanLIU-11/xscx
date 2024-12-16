@@ -64,6 +64,20 @@ body{
 }
 
 /*主视图*/
+
+#main_view_docs{
+    width: 88vw;
+    height: 100%; /* 设置高度为视口高度的100% */
+    flex-shrink: 0; /* 防止在缩小视口时被压缩 */
+    border-left: 2px solid #EEE9E9;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    display: block;
+}
+
 #main_view_case{
     width: 88vw;
     height: 100%; /* 设置高度为视口高度的100% */
@@ -73,8 +87,9 @@ body{
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
-    display: block;
+    display: none;
 }
+
 
 #main_view_exam{
     width: 88vw;
@@ -88,6 +103,8 @@ body{
     overflow-y: hidden;
     display: none;
 }
+
+
 
 /*图片条*/
 #img_banner{
@@ -131,6 +148,66 @@ body{
     background-color: #3986d3;
     color: #FFFFFF;
     border: 2px solid #3986d3; /* 设置边框颜色和宽度 */
+}
+
+/*条例表格*/
+#docs_table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead{
+    background-color: #0252A7;
+    color: white;
+}
+th:nth-child(1) {
+    width: 50%; /* 第一个表头的宽度 */
+    font-size: 1vw;
+}
+th:nth-child(2) {
+    width: 35%; /* 第二个表头的宽度 */
+    font-size: 1vw;
+}
+th:nth-child(3) {
+    width: 15%; /* 第三个表头的宽度 */
+    font-size: 1vw;
+}
+
+td:nth-child(1) {
+    width: 50%; 
+    font-size: 1vw;
+    color: #0252A7;
+    padding-right: 1%;
+    padding-left: 1%;
+}
+td:nth-child(1):hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+td:nth-child(2) {
+    width: 35%; 
+    font-size: 1vw;
+    color: grey;
+    padding-right: 1%;
+    padding-left: 1%;
+}
+td:nth-child(3) {
+    width: 15%; 
+    font-size: 1vw;
+    text-align: center;
+    color: grey;
+    
+}
+
+th{
+    border-left: 2px solid white; /* 左边框 */
+    border-right: 2px solid white; /* 右边框 */
+}
+
+td{
+    border-bottom: 1px dashed #949faaaa;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
 }
 
 /*案例列表*/

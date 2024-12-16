@@ -2,7 +2,7 @@
  * @Author: IvanLiu
  * @LastEditors: IvanLiu
  * @Date: 2024-11-15 09:45:27
- * @LastEditTime: 2024-12-15 13:52:01
+ * @LastEditTime: 2024-12-16 16:18:58
  * @Descripttion: 
 -->
 <!DOCTYPE html>
@@ -19,6 +19,9 @@
         </div>
         <div id = "main_body">
             <div id="left_navi">
+                <div id="documents" class="navi_button">
+                    <img id="docs_icon" src = "" style="width:1.2vw; height:auto; margin-right: 0.5vw;"><p style="font-size: 1.2vw;">规章制度</p>
+                </div>
                 <div id="learning_case" class="navi_button">
                     <img id="case_icon" src = "" style="width:1vw; height:auto; margin-right: 0.5vw;"><p style="font-size: 1.2vw;">案例学习</p>
                 </div>
@@ -26,6 +29,40 @@
                     <img id="exam_icon" src = "" style="width:1.3vw; height:auto; margin-right: 0.5vw;"><p style="font-size: 1.2vw;">知识问答</p>
                 </div>
             </div>
+
+            <div id="main_view_docs">
+                <div id="img_banner">
+                    <img src="./img/banner.jpg" style="width: 100%; height: auto;">
+                </div>
+                <div id="category_bar">
+                    <p style="font-size: 1.8vw;">规章制度</p>
+                </div>
+                <!--水平分割线-->
+                <div style="width: 100%; height: 1vh; display: flex; justify-content: center; margin-top: -2vh;">
+                    <div style="width: 30%; height: 0.2vh; background-color: #3986d3;  box-shadow: 0 4px 8px #3986d3;"></div>
+                </div>
+                <div style="width: 100%; height: 2vh; display: block;"></div>
+                
+                <div style="width: 100%; height: auto; display: flex; justify-content: center;">
+                    <div style="width: 85%; height: auto;">
+                        <table id="docs_table">
+                            <thead>
+                                <tr>
+                                    <th class="name_cole">名称</th>
+                                    <th class="institution_col">发布机构</th>
+                                    <th class="time_cole">日期</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div style="width: 100%; height: 30vh; background-color: white;"></div>
+            </div>
+            
             <div id="main_view_case">
                 <div id="img_banner">
                     <img src="./img/banner.jpg" style="width: 100%; height: auto;">
@@ -48,6 +85,7 @@
                     </ul>
                 </div>
             </div>
+
             <div id="main_view_exam">
                 <!-- <div id="img_banner">
                     <img src="./img/banner.jpg" style="width: 100%; height: auto;">
