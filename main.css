@@ -22,6 +22,10 @@ body{
 
 }
 
+#top_bar.forPhone{
+    padding-left: 0;
+}
+
 #top_bar_img{
     width: max(29.7vw, 40vh);
     height: auto; 
@@ -36,6 +40,7 @@ body{
     display: flex;
     flex-direction: row;
 }
+
 
 /* 左侧导航栏 */
 #left_navi {
@@ -70,6 +75,7 @@ body{
     color: #FFFFFF;
 }
 
+
 /*主视图*/
 
 #main_view_docs{
@@ -94,6 +100,7 @@ body{
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
+    overflow-y: scroll;
     display: none;
 }
 
@@ -112,7 +119,6 @@ body{
 }
 
 
-
 /*图片条*/
 #img_banner{
     width: 100%;
@@ -120,29 +126,29 @@ body{
     user-select: none; 
 }
 
-/*案例类型选择区*/
+/* 案例类型选择区 */
 #category_bar{
     width: 100%;
     user-select: none; 
     height: fit-content;
-    display: flex;                /* 使用flex布局 */
+    display: flex;                
     flex-direction: row;
-    justify-content: center;      /* 水平居中 */
-    align-items: center;          /* 垂直居中 */
+    justify-content: center;     
+    align-items: center;         
     padding: 0;
 }
 
 /*案例类型选择按钮*/
-.category_button{
+/* .category_button{
     width: 8%;
     user-select: none; 
     height: fit-content;
-    display: flex;                /* 使用flex布局 */
-    justify-content: center;      /* 水平居中 */
-    font-size: 1.2vw;              /* 设置字体大小 */
+    display: flex;               
+    justify-content: center;      
+    font-size: 1.2vw;             
     color: #778899;
-    border: 2px solid #778899; /* 设置边框颜色和宽度 */
-    border-radius: 5vh;    /* 设置圆角大小 */
+    border: 2px solid #778899; 
+    border-radius: 5vh;    
     margin-left: 1vw;
 }
 
@@ -154,8 +160,8 @@ body{
 .category_button.selected{
     background-color: #3986d3;
     color: #FFFFFF;
-    border: 2px solid #3986d3; /* 设置边框颜色和宽度 */
-}
+    border: 2px solid #3986d3; 
+} */
 
 /*条例表格*/
 #docs_table{

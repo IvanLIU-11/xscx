@@ -2,7 +2,7 @@
  * @Author: IvanLiu
  * @LastEditors: IvanLiu
  * @Date: 2024-11-15 09:45:43
- * @LastEditTime: 2024-12-16 16:54:26
+ * @LastEditTime: 2024-12-20 00:04:40
  * @Descripttion: 
  */
 
@@ -297,3 +297,71 @@ function case_item_clicked(index) {
     localStorage.setItem('case_info', JSON.stringify(case_info_arr[index]));
     window.location.href = 'case_detail.html';
   }
+
+  //按照屏幕长宽比响应改变布局，适应手机
+  function updateComponentStyles() {
+    const aspectRatio = window.innerWidth / window.innerHeight;
+    //主视窗要变
+    const main_views = document.querySelectorAll('.main_view');
+    const main_view_docs = document.getElementById("main_view_docs");
+    const main_view_case = document.getElementById("main_view_case");
+    const main_view_exam = document.getElementById("main_view_exam");
+    //导航栏要变
+    const naiv_bar = document.getElementById("left_navi");
+    const navi_buttons = document.querySelectorAll('.navi_button');
+
+    if(aspectRatio < 1){
+        // 如果宽高比小于1:1，应用竖屏样式
+
+        //主视窗占满宽度
+        main_views.forEach(main_view => {
+            main_view.style.width = "100%"; 
+        });
+        main_view_docs.style.border = "0";
+        main_view_case.style.border = "0";
+        main_view_exam.style.border = "0";
+
+        //导航栏移到下面
+        naiv_bar.style.setProperty("flex-direction", "row");
+        naiv_bar.style.setProperty("justify-content", "space-between");
+        naiv_bar.style.setProperty("box-shadow", "0 -1px 2px rgba(0, 0, 0, 0.3)");
+        naiv_bar.style.width = "100%";
+        naiv_bar.style.height = "6%";
+        naiv_bar.style.position = "fixed";
+        naiv_bar.style.bottom = "0";
+        navi_buttons.forEach(navi_button =>{
+            navi_button.style.width = "33%";
+            navi_button.style.height = "100%";
+        });
+    }
+    else{
+        // 否则，应用横屏样式
+        main_views.forEach(main_view => {
+            main_view.style.width = "90%"; 
+        });
+        main_view_docs.style.borderLeft = "2px solid #EEE9E9";
+        main_view_case.style.borderLeft = "2px solid #EEE9E9";
+        main_view_exam.style.borderLeft = "2px solid #EEE9E9";
+
+        //导航栏复原
+        naiv_bar.removeProperty("justify-content");
+        naiv_bar.removeProperty("box-shadow");
+        naiv_bar.style.width = "10%";
+        naiv_bar.style.height = "100%";
+        naiv_bar.removeProperty("position");
+        naiv_bar.removeProperty("bottom");
+        naiv_bar.style.setProperty("flex-shrink", "0");
+        naiv_bar.style.setProperty("flex-direction", "column");
+        navi_buttons.forEach(navi_button =>{
+            navi_button.style.width = "100%";
+            navi_button.style.height = "8%";
+        });
+    }
+    
+  }
+
+  // 在窗口大小改变时更新组件样式
+  window.addEventListener('resize', updateComponentStyles);
+
+  // 页面加载时也检查一次
+  updateComponentStyles();
