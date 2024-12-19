@@ -111,7 +111,7 @@ fetch('./data/long_case.json').then(response => response.json())  // 解析JSON
             case_item_clicked(index);
         };
         dis_index = index + 1;
-        case_item.innerHTML = '<div class="item_index">' + dis_index + '.</div>' + '<div class="item_info">' + '<p style="font-size:1.2vw; margin-top: 0.3vh; margin-bottom: 0.3vh;">' + element.title + '</p>' + '<div class = "case_t_n_loc">' + '<p style="font-size:1vw; margin-top: 0.3vh; margin-bottom: 0.3vh; color: grey">事件时间:' + element.time + '</p>'+'<p style="font-size:1vw; margin-top: 0.3vh; margin-bottom: 0.3vh; margin-left: 1vw;color: grey">地区:' + element.region + '</p>' + '</div></div>';
+        case_item.innerHTML = '<div class="item_index">' + dis_index + '.</div>' + '<div class="item_info">' + '<p style="font-size:max(1.2vw, 1.5vh); margin-top: 0.3vh; margin-bottom: 0.3vh;">' + element.title + '</p>' + '<div class = "case_t_n_loc">' + '<p style="font-size:max(1vw, 1.2vh); margin-top: 0.3vh; margin-bottom: 0.3vh; color: grey">事件时间:' + element.time + '</p>'+'<p style="font-size:max(1vw, 1.2vh); margin-top: 0.3vh; margin-bottom: 0.3vh; margin-left: 1vw;color: grey">地区:' + element.region + '</p>' + '</div></div>';
         case_list.appendChild(case_item);
     });
 })

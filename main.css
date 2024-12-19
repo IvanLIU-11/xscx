@@ -6,6 +6,7 @@ body{
     height: 100vh; /* 设置body的高度为视口高度的100% */
     display: flex; /* 使用flex布局 */
     flex-direction: column; /* 子元素垂直排列 */
+    overflow-x: hidden;
 }
 
 /*顶部bar*/
@@ -14,18 +15,24 @@ body{
     width: 100%;
     display: flex; /* 使用flex布局 */
     align-items: center; /* 使子元素在交叉轴上居中 */
-    height: 9vh;
-    position: fixed;
+    height: fit-content;
+    /* position: fixed; */
     padding-left: 1vw;
     z-index: 1000; /* 确保在其它内容之上 */
+
+}
+
+#top_bar_img{
+    width: max(29.7vw, 40vh);
+    height: auto; 
+    padding-top: 1vh; 
+    padding-bottom: 1vh;
 }
 
 /*主体视窗*/
 #main_body{
     width: 100vw;
-    height: fit-content;
-    min-height: 91vh;
-    margin-top: 9vh; /* 通过margin-top调整位置，使其从#top_bar下方开始 */
+    height: 100vh;
     display: flex;
     flex-direction: row;
 }
@@ -162,20 +169,20 @@ thead{
 }
 th:nth-child(1) {
     width: 50%; /* 第一个表头的宽度 */
-    font-size: 1vw;
+    font-size: max(1vw, 1.2vh);
 }
 th:nth-child(2) {
     width: 35%; /* 第二个表头的宽度 */
-    font-size: 1vw;
+    font-size:  max(1vw, 1.2vh);
 }
 th:nth-child(3) {
     width: 15%; /* 第三个表头的宽度 */
-    font-size: 1vw;
+    font-size:  max(1vw, 1.2vh);
 }
 
 td:nth-child(1) {
     width: 50%; 
-    font-size: 1vw;
+    font-size:  max(1vw, 1.2vh);
     color: #0252A7;
     padding-right: 1%;
     padding-left: 1%;
@@ -186,14 +193,14 @@ td:nth-child(1):hover {
 }
 td:nth-child(2) {
     width: 35%; 
-    font-size: 1vw;
+    font-size:  max(1vw, 1.2vh);
     color: grey;
     padding-right: 1%;
     padding-left: 1%;
 }
 td:nth-child(3) {
     width: 15%; 
-    font-size: 1vw;
+    font-size:  max(1vw, 1.2vh);
     text-align: center;
     color: grey;
     
@@ -216,12 +223,14 @@ td{
     height: fit-content;
     display: flex; /* 使用flex布局 */
     flex-direction: column; /* 子项垂直排列 */
+    align-items: center;
 }
 
 /*案例表项*/
 #case_list li{
     background-color: #ffffff;
     list-style-type: none;
+    width: max(80vw, 30vh);
     height: fit-content;
     border: 1px solid #ffffff; /* 设置边框 */
     border-radius: 8px; /* 设置圆角边框，数值可以根据需要调整 */
@@ -239,10 +248,10 @@ td{
 
 .item_index{
     color: #3986d3;
-    font-size: 2vw;
+    font-size: max(2vw, 2.4vh);
     font-weight: bolder;
     font-style: italic;
-    width: 2.7vw;
+    width: max(2.7vw, 3,3vh);
     display: flex;                /* 使用flex布局 */
     justify-content: center;      /* 水平居中 */
     align-items: center;          /* 垂直居中 */
