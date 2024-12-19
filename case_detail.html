@@ -2,7 +2,7 @@
  * @Author: IvanLiu
  * @LastEditors: IvanLiu
  * @Date: 2024-11-15 09:45:27
- * @LastEditTime: 2024-12-15 10:40:58
+ * @LastEditTime: 2024-12-19 11:06:50
  * @Descripttion: 
 -->
 <!DOCTYPE html>
@@ -21,7 +21,7 @@
     </head>
     <body>
         <div id="top_bar">
-            <a href="./main.html" ><img src="./img/slogan.png" style="width: 29.7vw; height: auto;"></a>
+            <a href="./main.html" ><img src="./img/slogan.png" id="top_bar_img"></a>
         </div>
         <div id = "main_body">
             <div id="img_banner_detail">
@@ -30,12 +30,12 @@
             <div id="theme_bar">
                 <div id="back_bar">
                     <div id="back_button" onclick="goBack()">
-                        <p style="font-size: 0.9vw; font-weight: bold;">＜</p>
-                        <p style="font-size: 0.9vw;">返回</p>
+                        <p style="font-size: max(0.9vw, 1.2vh); font-weight: bold;">＜</p>
+                        <p style="font-size: max(0.9vw, 1.2vh);">返回</p>
                     </div>
                 </div>
                 <div id="theme">
-                    <p style="font-size: 1.5vw; color: #000000;">案例学习</p>
+                    <p style="font-size: max(1.5vw, 1.8vh); color: #000000;">案例学习</p>
                 </div>
                 <div id="theme_line">
                     <div style="width: 10%; height: 0.2vh; background-color: #0252A7;"></div>
@@ -44,11 +44,11 @@
             </div>
             <div id="text_area">
                 <div class = "case_title">
-                    <p style="font-size: 2vw; font-weight: bold;line-height: 2; margin: 0; padding: 0; margin-top: 2vh;" id="case_title_txt"></p>
+                    <p style="font-size: max(2vw, 2.4vh); font-weight: bold;line-height: 2; margin: 0; padding: 0; margin-top: 2vh;" id="case_title_txt"></p>
                 </div>
                 <div class = "case_title">
-                        <p style="font-size: 1.2vw; color: grey; line-height: 2; margin: 0; padding: 0;" id="case_time_txt"></p>
-                        <p style="font-size: 1.2vw; color: grey; line-height: 2; margin: 0; margin-left: 1vw;padding: 0;" id="case_location_txt">1111</p>
+                        <p style="font-size: max(1.2vw, 1.5vh); color: grey; line-height: 2; margin: 0; padding: 0;" id="case_time_txt"></p>
+                        <p style="font-size: max(1.2vw, 1.5vh); color: grey; line-height: 2; margin: 0; margin-left: 1vw;padding: 0;" id="case_location_txt">1111</p>
                 </div>
                 <div id = "full_text"></div>
                 <!--占位空白区-->
@@ -86,7 +86,7 @@
             var pic_index = 0;
             parts.forEach(function(paragraph) {
                 const p = document.createElement('p');
-                p.style.fontSize = '1.2vw';
+                p.style.fontSize = 'max(1.2vw, 1.5vh)';
                 p.style.margin = 0;
                 p.style.padding = 0;
                 p.textContent = paragraph;
@@ -99,7 +99,7 @@
 
                     const pic = document.createElement('img');
                     pic.src = "./data/case_img/" + pic_name_arr[pic_index];
-                    pic.style.width = "40%";
+                    pic.style.width = "max(35vw, 40vh)";
                     pic.style.height = "auto";
 
                     pic_div.appendChild(pic);
